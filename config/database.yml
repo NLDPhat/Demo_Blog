@@ -10,13 +10,13 @@
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
   pool: 5
-  username: root
+  timeout: 5000
+  username: postgres
   password: 12201995
   host: localhost
-  socket: MySQL
+  encoding: UTF8
 
 development:
   <<: *default

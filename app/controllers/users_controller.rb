@@ -72,8 +72,3 @@ class UsersController < ApplicationController
       params.require(:user).permit(:password, :email)
     end
 end
-
-
-<% @friends.each do |friend| %>
-        <div ><%= friend.friend_id %></div>
-        <% user = User.find(friend.friend_id)%>
