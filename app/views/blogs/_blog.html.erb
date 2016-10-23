@@ -1,0 +1,11 @@
+<div class="col-sm-3"> 
+      <div class="card card-block">
+        <h5 class="card-title text-xs-center"><%= blog.Title %></h3>
+        <img src="http://bit.ly/2dFYPpz" class="img-responsive" style="width:100%" alt="Image">
+        <div class="card-block text-xs-center" style="padding-left: 1px; padding-right: 1px;">
+            <%= link_to 'Show', blog, class: 'btn btn-info', style: 'padding: 2px 10px;'%>
+            <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-primary', style: 'padding: 2px 10px;'%>
+            <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Do you want destroy?' }, class: 'btn btn-danger', style: 'padding: 2px 10px;'%>
+        </div>
+      </div>
+</div>

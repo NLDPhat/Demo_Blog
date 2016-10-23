@@ -1,0 +1,41 @@
+<% provide(:page_title, @blog.Title) %>
+<% provide(:Per,'2')%>
+<div class="row">
+  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+    <h1>
+    <span><%= @blog.Title %><span>
+    <span class="text-xs-left"><%= link_to 'Edit', edit_blog_path(@blog), class: 'btn btn-primary', style: 'padding: 2px 10px;'%><span>
+    </h1>
+    <p style="color: black"><%= @blog.post %></p>
+  </div>
+</div>
+
+<h5 class="text-muted">Comments</h5>
+<% @blog.comments.each do |comment| %>
+    <div class="alert alert-success" role="alert" style="padding-top: 10px; padding-bottom: 10px;">
+      <strong>Your comment: </strong> <%= comment.body %>
+      <div class="text-xs-right">
+        <%= link_to 'Delete',[comment.blog, comment], method: :delete, data: { confirm: 'Do you want destroy?' },class: 'btn btn-danger', style: 'padding: 2px 10px;'%>
+      </div>
+    </div>
+    <div>
+    
+    
+    </div>
+<% end %>
+
+
+
+<h5 class="text-muted">Add Comments</h5>
+
+<%= form_for([@blog, @blog.comments.build]) do |f| %>
+
+  <p>
+    <%= f.text_area :body, size:"100x3" %>
+  </p>
+  
+  <p>
+  <%= f.submit 'Comment', :class => 'btn btn-success' %>
+  <%= link_to 'Back', blogs_path, class: 'btn btn-info' %>
+  </p>
+<% end %>

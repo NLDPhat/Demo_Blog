@@ -1,0 +1,12 @@
+<% provide(:page_title, 'All post') %>
+<% provide(:blog_active,'active') %>
+</br>
+<div>
+  <%= link_to 'New Blog', new_blog_path, class: 'btn btn-success' %>
+</div>
+<br>
+<div class="row">
+  <%= render @blogs %>
+</div>
+
+
